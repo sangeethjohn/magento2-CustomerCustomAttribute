@@ -1,0 +1,18 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Customer\Block\Form\Register $block */
+?><fieldset class="fieldset create account" data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>">
+    <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Additional Information') ?></span></legend>
+    <p>
+    <?php $_addresstype = $block->getLayout()->createBlock('Macfadyen\CustomerCustomAttributes\Block\Widget\AddressType') ?>
+        <?php if ($_addresstype->isEnabled()): ?>
+            <?= $_addresstype->setAddressType($block->getFormData()->getAddressType())->toHtml() ?>
+        <?php endif ?>
+      </p>
+</fieldset>
